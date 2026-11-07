@@ -1,0 +1,51 @@
+{
+  "manifest_version": 3,
+  "name": "ChillTong YouTube Bilingual",
+  "version": "1.4.0",
+  "description": "保留 YouTube 英文字幕，通过自己的 API 在上方显示中文翻译。",
+  "minimum_chrome_version": "114",
+  "permissions": [
+    "storage",
+    "nativeMessaging"
+  ],
+  "host_permissions": [
+    "https://www.youtube.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "YouTube 双语字幕"
+  },
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.youtube.com/*"
+      ],
+      "js": [
+        "captions-bridge.js"
+      ],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": [
+        "https://www.youtube.com/*"
+      ],
+      "js": [
+        "contrast.js",
+        "content.js"
+      ],
+      "run_at": "document_start",
+      "css": [
+        "captions.css"
+      ]
+    }
+  ],
+  "optional_host_permissions": [
+    "https://*/*"
+  ]
+}

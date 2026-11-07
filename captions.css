@@ -1,0 +1,61 @@
+/* Override YouTube's inline caption widths and authored line breaks only while
+   ChillTong is enabled. Keep the real caption text available to the player. */
+#movie_player.chilltong-wide-captions .ytp-caption-window-container .caption-window {
+  width: 94% !important;
+  max-width: 94% !important;
+  left: 3% !important;
+  right: auto !important;
+  top: auto !important;
+  bottom: 7% !important;
+  margin: 0 !important;
+  transform: none !important;
+  text-align: center !important;
+  height: auto !important;
+  white-space: normal !important;
+}
+#movie_player.chilltong-wide-captions .ytp-caption-window-container .captions-text {
+  display: block !important;
+  width: 100% !important;
+  white-space: normal !important;
+}
+#movie_player.chilltong-wide-captions .ytp-caption-window-container .caption-visual-line,
+#movie_player.chilltong-wide-captions .ytp-caption-window-container .ytp-caption-segment {
+  display: inline !important;
+  white-space: normal !important;
+  padding: 0 !important;
+}
+#movie_player.chilltong-wide-captions .ytp-caption-window-container .caption-visual-line::after {
+  content: ' ';
+}
+#movie_player.chilltong-wide-captions .ytp-caption-window-container .caption-window,
+#movie_player.chilltong-wide-captions .ytp-caption-window-container .caption-window * {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  text-shadow: var(--ct-subtitle-shadow, none) !important;
+  -webkit-text-stroke: 0 !important;
+}
+
+/* Native player shortcut. The saved configuration is used without opening a page. */
+#movie_player .chilltong-translate-button {
+  order: -1;
+  position: relative;
+  font-family: system-ui, "PingFang SC", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+}
+#movie_player .chilltong-translate-button[aria-pressed="true"]::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 28%;
+  width: 44%;
+  height: 3px;
+  background: #63dcb4;
+  border-radius: 2px;
+}
+#movie_player .chilltong-translate-button:disabled { opacity: .4; cursor: default; }
+#movie_player .chilltong-translate-button[hidden] { display: none !important; }
+#movie_player .chilltong-review-button {font:600 20px system-ui,"PingFang SC",sans-serif;color:#fff;order:-1;}

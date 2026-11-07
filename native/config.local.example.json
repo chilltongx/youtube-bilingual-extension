@@ -1,0 +1,12 @@
+{
+  "extension_id": "COPY_YOUR_EXTENSION_ID_HERE",
+  "ffmpeg": "",
+  "aijian_module": "",
+  "transcript_directory": "~/Documents/ChillTong/文字稿",
+  "publish_enabled": false,
+  "site_root": "~/Sites/podcast-blog",
+  "ssh_target": "",
+  "ssh_identity": "",
+  "node": "",
+  "ssh": ""
+}

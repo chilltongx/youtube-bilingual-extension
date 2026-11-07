@@ -1,0 +1,10 @@
+{
+  "name": "chilltong-youtube-bilingual",
+  "version": "1.4.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "test": "node --test tests/*.test.js"
+  }
+}

@@ -1,0 +1,15 @@
+.DS_Store
+node_modules/
+.env
+.env.*
+!.env.example
+native/config.local.json
+native/.launch-*.sh
+native/.venv/
+native/models/
+**/__pycache__/
+test-artifacts/
+*.zip
+*.pem
+*.key
+*.log

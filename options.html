@@ -1,0 +1,11 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ChillTong 双语字幕 · 设置</title><link rel="stylesheet" href="ui.css"></head><body><main>
+<div class="eyebrow">CHILLTONG / YOUTUBE</div><h1>让英文播客，更好懂。</h1><p>保留原生英文字幕，在上方显示中文翻译。</p>
+<form id="settings"><label for="endpoint">翻译接口</label><input id="endpoint" type="url" required placeholder="https://api.example.com/v1">
+<label for="apiKey">API Key</label><input id="apiKey" type="password" autocomplete="off" placeholder="填写你的 API Key"><div class="hint" id="keyHint">仅保存在本机 Chrome 插件存储中，不同步到账号。</div>
+<label for="model">模型</label><input id="model" required placeholder="填写服务商提供的模型名称">
+<div class="hint">使用兼容 Responses API 的服务。模型须支持 stream/store=false；如需 reasoning 或 priority，可在 core.js 默认配置中启用。</div>
+<label for="fontSize">中文字幕字号</label><select id="fontSize"><option value="match">跟随英文字幕 · 自动等大</option><option value="20">小 · 20px</option><option value="25">标准 · 25px</option><option value="32">大 · 32px</option><option value="40">特大 · 40px</option></select>
+<label class="switch"><input id="enabled" type="checkbox">开启中文翻译</label>
+<div class="actions"><button type="submit">保存设置</button><button type="button" id="test" class="secondary">测试翻译</button><button type="button" id="clear" class="secondary">删除密钥</button></div></form><div id="status" role="status"></div>
+<footer>日常使用只需在 YouTube 底栏点 CC 或「译」，自动使用已保存的模型配置；字幕语言选择英语。英文字幕会发送至你的网站进行翻译，并产生对应模型用量。翻译速度取决于接口响应；暂不提供音频转录。密钥存储不是加密保险库，请勿分享浏览器用户目录。</footer>
+</main><script type="module" src="options.js"></script></body></html>
